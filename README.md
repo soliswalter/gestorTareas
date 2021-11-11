@@ -8,10 +8,14 @@ src/main/java/com/gestorTareas/GestorTareasApplication.java).
 
 Una vez levantado, las rutas para probar la api-rest son: 
 
-GET http://localhost:8080/tasks devuelve la lista de tareas;
-GET http://localhost:8080/task/id  devuelve la tarea con el id especificado en la ruta;
-POST  http://localhost:8080/task  carga una tarea en la base de datos;
-PATCH http://localhost:8080/task/id   edita la tarea con el id especificado en la ruta, espera un objeto de tipo Task en el body del request;
+GET http://localhost:8080/tasks devuelve la lista de tareas
+
+GET http://localhost:8080/task/id  devuelve la tarea con el id especificado en la ruta
+
+POST  http://localhost:8080/task  carga una tarea en la base de datos
+
+PATCH http://localhost:8080/task/id   edita la tarea con el id especificado en la ruta, espera un objeto de tipo Task en el body del request
+
 DELETE http://localhost:8080/task/id  elimina la tarea con el id especificado en la ruta
 
 
