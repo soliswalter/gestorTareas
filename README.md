@@ -1,7 +1,8 @@
 # gestorTareas
 
-Para cargar crear la base de datos y el usuario que lo usa, ejecutar en terminal "script.sh" que se encuentra en src/main/resources/carga-bd.
-Este script ejecuta el archivo gestorTarea.sql que se encuentra en la misma carpeta
+Para cargar crear la base de datos y el usuario que lo usa, ejecutar en terminal "script.sh" que se encuentra en src/main/resources/carga-bd. Le
+pedirá la contraseña de su usuario root de MySQL para ejecutar el script.
+Este script ejecuta el archivo gestorTarea.sql que se encuentra en la misma carpeta.
 
 Tanto el back como el front se levantan por separado (el back ejecutando el servlet con el que inicia el proyecto springboot en
 src/main/java/com/gestorTareas/GestorTareasApplication.java).
@@ -19,4 +20,4 @@ PATCH http://localhost:8080/task/id   edita la tarea con el id especificado en l
 DELETE http://localhost:8080/task/id  elimina la tarea con el id especificado en la ruta
 
 
-Para implementar el backend utilicé: Java 11, MySql 5.7.28, Apache Maven 3.6.0, SpringBoot, Spring Data, Spring Web
+Para implementar el backend utilicé: Java 11, MySQL 5.7.28, Apache Maven 3.6.0, SpringBoot, Spring Data, Spring Web
