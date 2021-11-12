@@ -1,7 +1,7 @@
-CREATE USER IF NOT EXISTS 'soliswalter'@'localhost' IDENTIFIED BY '';
-CREATE DATABASE  IF NOT EXISTS `gestor` /*!40100 DEFAULT CHARACTER SET utf8 */;
-GRANT ALL PRIVILEGES ON gestor.* TO soliswalter@localhost IDENTIFIED by '';
-USE `gestor`;
+CREATE USER IF NOT EXISTS 'wsolis'@'localhost' IDENTIFIED BY '1234';
+CREATE DATABASE  IF NOT EXISTS `gestorTareas` /*!40100 DEFAULT CHARACTER SET utf8 */;
+GRANT ALL PRIVILEGES ON gestorTareas.* TO wsolis@localhost IDENTIFIED by '1234';
+USE `gestorTareas`;
 -- MySQL dump 10.13  Distrib 5.7.28, for Linux (x86_64)
 --
 -- Host: 127.0.0.1    Database: gestorTareas

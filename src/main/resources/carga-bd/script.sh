@@ -1,5 +1,4 @@
 #!/bin/bash
 
-PASSWORD=''
 
- mysql -uadmin -p$PASSWORD < "gestorTarea.sql"
+ mysql -uroot -p < "gestorTarea.sql"
