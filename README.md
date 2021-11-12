@@ -20,4 +20,4 @@ PATCH http://localhost:8080/task/id   edita la tarea con el id especificado en l
 DELETE http://localhost:8080/task/id  elimina la tarea con el id especificado en la ruta
 
 
-Para implementar el backend utilicé: Java 11, MySQL 5.7.28, Apache Maven 3.6.0, SpringBoot, Spring Data, Spring Web
+Para implementar el backend utilicé: Java 11, MySQL 5.7.28, Apache Maven 3.6.0, Spring Boot 2.5.6, Spring Data, Spring Web.
