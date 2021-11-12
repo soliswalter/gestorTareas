@@ -2,7 +2,7 @@
 
 Para cargar crear la base de datos y el usuario que lo usa, ejecutar en terminal "script.sh" que se encuentra en src/main/resources/carga-bd. Le
 pedirá la contraseña de su usuario root de MySQL para ejecutar el script.
-Este script ejecuta el archivo gestorTarea.sql que se encuentra en la misma carpeta.
+Este script ejecuta el archivo gestorTarea.sql que se encuentra en la misma carpeta. MySQL se ejecuta en el puerto 3306.
 
 Tanto el back como el front se levantan por separado (el back ejecutando el servlet con el que inicia el proyecto springboot en
 src/main/java/com/gestorTareas/GestorTareasApplication.java).
