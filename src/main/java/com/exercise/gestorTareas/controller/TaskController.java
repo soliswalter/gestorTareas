@@ -43,6 +43,9 @@ public class TaskController {
 	@RequestMapping(value = "task", method = RequestMethod.POST)
 	public ResponseEntity<Task> saveTask(@RequestBody Task task){
 		Task taskCreated = taskService.createTask(task);
+		if(taskCreated == null) {
+			return ResponseEntity.noContent().build();
+		}
 		return ResponseEntity.status(HttpStatus.CREATED).body(taskCreated);
 	}
 

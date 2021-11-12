@@ -27,6 +27,9 @@ public class TaskServiceImpl implements TaskService {
 
 	@Override
 	public Task createTask(Task task) {
+		if(task.getName()==null) {
+			return null;
+		}
 		task.setDeleted(false);
 		task.setStatus("Undone");
 		return this.taskRepository.save(task);
