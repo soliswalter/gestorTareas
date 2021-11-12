@@ -41,7 +41,7 @@ CREATE TABLE `task` (
 
 LOCK TABLES `task` WRITE;
 /*!40000 ALTER TABLE `task` DISABLE KEYS */;
-INSERT INTO `task` VALUES (1,'Buy groceries','done','0'),(2,'Prepare weekly report','undone','1'),(3,'Write to candidates','done','0');
+INSERT INTO `task` VALUES (1,'Buy groceries','done','0'),(2,'Prepare weekly report','undone','0'),(3,'Write to candidates','done','0');
 /*!40000 ALTER TABLE `task` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
