@@ -57,6 +57,9 @@ public class TaskServiceImpl implements TaskService {
 
 	@Override
 	public Task updateTask(Task task) {
+		if(task.getName() == null || task.getId() == null) {
+			return null;
+		}
 		Task taskDB = this.getTask(task.getId());
 		if (taskDB == null) {
 			return null;
