@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.exercise.gestorTareas.entity.Task;
 import com.exercise.gestorTareas.service.TaskService;
+import com.exercise.gestorTareas.utils.DTO.TaskDTO;
 
 @CrossOrigin
 @RestController
@@ -23,8 +24,8 @@ public class TaskController {
 	private TaskService taskService;
 	
 	@RequestMapping(value="tasks")
-	public ResponseEntity<List<Task>> listAllTasks() {
-		List<Task> tasks = taskService.listAllTasks();
+	public ResponseEntity<List<TaskDTO>> listAllTasks() {
+		List<TaskDTO> tasks = taskService.listAllTasks();
 		if (tasks.isEmpty()) {
 			return ResponseEntity.noContent().build();
 		}
@@ -32,17 +33,17 @@ public class TaskController {
 	}
 	
 	@RequestMapping(value = "task/{id}", method = RequestMethod.GET)
-	public ResponseEntity<Task> getTask(@PathVariable("id") Long id){
-		Task task = taskService.getTask(id);
-		if(task == null) {
+	public ResponseEntity<TaskDTO> getTask(@PathVariable("id") Long id){
+		TaskDTO taskDTO = taskService.getTask(id);
+		if(taskDTO == null) {
 			return ResponseEntity.notFound().build();
 		}
-		return ResponseEntity.ok(task);
+		return ResponseEntity.ok(taskDTO);
 	}
 	
-	@RequestMapping(value = "task", method = RequestMethod.POST)
-	public ResponseEntity<Task> saveTask(@RequestBody Task task){
-		Task taskCreated = taskService.createTask(task);
+	@RequestMapping(value = "task/folder/{id}", method = RequestMethod.POST)
+	public ResponseEntity<TaskDTO> saveTask(@RequestBody TaskDTO taskDTO, @PathVariable("id") Long idFolder){
+		TaskDTO taskCreated = taskService.createTask(taskDTO, idFolder);
 		if(taskCreated == null) {
 			return ResponseEntity.noContent().build();
 		}
@@ -50,8 +51,8 @@ public class TaskController {
 	}
 
 	@RequestMapping(value = "task/{id}", method = RequestMethod.DELETE)
-	public ResponseEntity<Task> deleteTask(@PathVariable("id") Long id){
-		Task taskDeleted = this.taskService.deleteTask(id);
+	public ResponseEntity<TaskDTO> deleteTask(@PathVariable("id") Long id){
+		TaskDTO taskDeleted = this.taskService.deleteTask(id);
 		if (taskDeleted == null) {
 			return ResponseEntity.notFound().build();
 		}
@@ -59,9 +60,9 @@ public class TaskController {
 	}
 	
 	@RequestMapping(value = "task/{id}", method = RequestMethod.PATCH)
-	public ResponseEntity<Task> updateTask(@PathVariable Long id, @RequestBody Task task){
-		task.setId(id);
-		Task taskDB = this.taskService.updateTask(task);
+	public ResponseEntity<TaskDTO> updateTask(@PathVariable Long id, @RequestBody TaskDTO taskDTO){
+		taskDTO.setId(id);
+		TaskDTO taskDB = this.taskService.updateTask(taskDTO);
 		if (taskDB == null) {
 			return ResponseEntity.notFound().build();
 		}

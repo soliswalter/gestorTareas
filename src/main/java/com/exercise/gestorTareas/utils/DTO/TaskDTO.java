@@ -1,36 +1,22 @@
-package com.exercise.gestorTareas.entity;
+package com.exercise.gestorTareas.utils.DTO;
 
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-
+import com.exercise.gestorTareas.entity.Folder;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
-@Entity
-public class Task {
+public class TaskDTO {
 	
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	private String name;
 	private String status;
 	private boolean deleted;
-	
-	@ManyToOne()
-	@JoinColumn(name = "folder_id")
 	private Folder folder;
 	
-	
-	public Task() {
+	public TaskDTO() {
 	}
 	
 	
 	
-	public Task(Long id, String name, String status, boolean deleted, Folder folder) {
+	public TaskDTO(Long id, String name, String status, boolean deleted, Folder folder) {
 		super();
 		this.id = id;
 		this.name = name;
@@ -41,7 +27,7 @@ public class Task {
 
 
 
-	public Task(Long id, String name, String status, boolean deleted) {
+	public TaskDTO(Long id, String name, String status, boolean deleted) {
 		super();
 		this.id = id;
 		this.name = name;
@@ -50,7 +36,7 @@ public class Task {
 	}
 
 
-	public Task(String name, String status, boolean deleted) {
+	public TaskDTO(String name, String status, boolean deleted) {
 		super();
 		this.name = name;
 		this.status = status;
@@ -99,9 +85,6 @@ public class Task {
 	public boolean isDeleted() {
 		return deleted;
 	}
-	
-	
-	
 	
 	
 

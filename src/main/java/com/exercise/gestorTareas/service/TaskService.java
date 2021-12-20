@@ -3,16 +3,18 @@ package com.exercise.gestorTareas.service;
 import java.util.List;
 
 import com.exercise.gestorTareas.entity.Task;
+import com.exercise.gestorTareas.utils.DTO.TaskDTO;
 
 public interface TaskService {
 	
-	public List<Task> listAllTasks();
-	public Task getTask(Long id);
-	public Task createTask(Task task);
-	public List<Task> findByStatus(String status);
-	public List<Task> findByDeleted(boolean deleted);
-	public Task deleteTask(Long id);
-	public Task updateTask(Task task);
+	public List<TaskDTO> listAllTasks();
+	public TaskDTO getTask(Long id);
+	public TaskDTO createTask(TaskDTO taskDTO, Long idFolder);
+	public List<TaskDTO> findByStatus(String status);
+	public List<TaskDTO> findByDeleted(boolean deleted);
+	public TaskDTO deleteTask(Long id);
+	public TaskDTO updateTask(TaskDTO taskDTO);
+	public List<TaskDTO> generarListaDTO(List<Task> tasks);
 	
 	
 
